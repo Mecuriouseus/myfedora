@@ -1,0 +1,65 @@
+# Gnome extensions
+- name: Install Gnome extension manager
+  community.general.flatpak:
+    name: com.mattjakeman.ExtensionManager
+    state: present
+
+- name: Download Gnome Dash To Dock
+  ansible.builtin.get_url:
+    url: https://github.com/micheleg/dash-to-dock/releases/download/extensions.gnome.org-v105/dash-to-dock@micxgx.gmail.com.zip
+    dest: /tmp/dash-to-dock@micxgx.gmail.com.zip
+    owner: mishaid
+    mode: '0644'
+
+- name: Install Gnome Dash To Dock
+  ansible.builtin.command:
+    cmd: gnome-extensions install /tmp/dash-to-dock@micxgx.gmail.com.zip --force
+    creates: /home/mishaid/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/metadata.json
+
+- name: Download Gnome Blur My Shell
+  ansible.builtin.get_url:
+    url: https://github.com/aunetx/blur-my-shell/releases/download/v72/blur-my-shell@aunetx.shell-extension.zip
+    dest: /tmp/blur-my-shell@aunetx.shell-extension.zip
+    owner: mishaid
+    mode: '0644'
+
+- name: Install Gnome Blur My Shell
+  ansible.builtin.command:
+    cmd: gnome-extensions install /tmp/blur-my-shell@aunetx.shell-extension.zip --force
+    creates: /home/mishaid/.local/share/gnome-shell/extensions/blur-my-shell@aunetx/metadata.json
+
+- name: Download Gnome Blur My Shell
+  ansible.builtin.get_url:
+    url: https://extensions.gnome.org/extension-data/azwallpaperazwallpaper.gitlab.com.v19.shell-extension.zip
+    dest: /tmp/azwallpaper@azwallpaper.gitlab.com.zip
+    owner: mishaid
+    mode: '0644'
+
+- name: Install Gnome Blur My Shell
+  ansible.builtin.command:
+    cmd: gnome-extensions install /tmp/azwallpaper@azwallpaper.gitlab.com.zip
+    creates: /home/mishaid/.local/share/gnome-shell/extensions/azwallpaper@azwallpaper.gitlab.com/metadata.json
+
+- name: Download Gnome AppIndicator
+  ansible.builtin.get_url:
+    url: https://github.com/ubuntu/gnome-shell-extension-appindicator/releases/download/v64/appindicatorsupport@rgcjonas.gmail.com.zip
+    dest: /tmp/appindicatorsupport@rgcjonas.gmail.com.zip
+    owner: mishaid
+    mode: '0644'
+
+- name: Install Gnome AppIndicator
+  ansible.builtin.command:
+    cmd: gnome-extensions install /tmp/appindicatorsupport@rgcjonas.gmail.com.zip
+    creates: /home/mishaid/.local/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com/metadata.json
+
+- name: Download Gnome Gtk4 Desktop Icons NG
+  ansible.builtin.get_url:
+    url: https://gitlab.com/smedius/desktop-icons-ng/-/jobs/14292421007/artifacts/raw/dist/gtk4-ding@smedius.gitlab.com.zip
+    dest: /tmp/gtk4-ding@smedius.gitlab.com.zip
+    owner: mishaid
+    mode: '0644'
+
+- name: Install Gnome Gtk4 Desktop Icons NG
+  ansible.builtin.command:
+    cmd: gnome-extensions install /tmp/gtk4-ding@smedius.gitlab.com.zip
+    creates: /home/mishaid/.local/share/gnome-shell/extensions/gtk4-ding@smedius.gitlab.com/metadata.json

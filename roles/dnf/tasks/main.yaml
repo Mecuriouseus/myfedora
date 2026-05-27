@@ -1,0 +1,34 @@
+# Uninstall useless packages with dnf
+- name: Uninstall useless packages
+  ansible.builtin.dnf:
+    name: "{{ dnf_packages_to_uninstall }}"
+    state: absent
+    allowerasing: true
+  become: true
+
+# Install Google Chrome
+- name: Install Chrome GPG key
+  ansible.builtin.rpm_key:
+    key: https://dl.google.com/linux/linux_signing_key.pub
+    state: present
+  become: true
+
+- name: Download Chrome installer
+  ansible.builtin.get_url:
+    url: https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+    dest: /tmp/google-chrome-stable_current_x86_64.rpm
+    owner: mishaid
+    mode: '0644'
+
+- name: Install Chrome
+  ansible.builtin.dnf:
+    name: /tmp/google-chrome-stable_current_x86_64.rpm
+    state: present
+  become: true
+
+# Install packages with dnf
+- name: Install rpm packages
+  ansible.builtin.dnf:
+    name: "{{ dnf_packages_to_install }}"
+    state: present
+  become: true

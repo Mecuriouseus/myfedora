@@ -1,0 +1,24 @@
+---
+- name: My fedora44 configuration
+  hosts: localhost
+  connection: local
+
+  roles:
+    - codium
+    - flatpak
+    - gnome-extensions
+    - dnf
+    - syncthing
+    - ssh-client
+
+  tasks:
+    - name: Display facts
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts }}"
+
+# TODO: Заменить VSCodium на VSCode
+# TODO: hostname на основе board_name из ansible_facts
+# TODO: Настройка git
+# TODO: Настройка gnome-extensions
+# TODO: Установка модулей VSCode???
+# TODO: Установка курсора и значков в Gnome

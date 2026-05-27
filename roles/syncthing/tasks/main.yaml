@@ -1,0 +1,12 @@
+- name: Install syncthing
+  ansible.builtin.dnf:
+    name: syncthing
+    state: present
+  become: true
+
+- name: Syncthing_enable
+  ansible.builtin.systemd_service:
+    name: syncthing
+    state: started
+    enabled: true
+    scope: user

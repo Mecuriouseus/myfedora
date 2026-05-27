@@ -1,0 +1,7 @@
+- name: Insert ssh client config into main config
+  ansible.builtin.blockinfile:
+    path: /etc/ssh/ssh_config
+    append_newline: true
+    prepend_newline: true
+    block: "{{ lookup('file', './files/ssh_config') }}"
+  become: true

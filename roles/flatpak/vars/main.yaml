@@ -1,0 +1,8 @@
+flatpak_packages:
+  - com.discordapp.Discord
+  - com.github.neithern.g4music
+  - md.obsidian.Obsidian
+  - org.keepassxc.KeePassXC
+  - org.onlyoffice.desktopeditors
+  - org.telegram.desktop
+  - page.tesk.Refine

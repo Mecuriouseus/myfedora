@@ -1,0 +1,21 @@
+{
+    "workbench.startupEditor": "none",
+
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.hideExplorerArrows": true,
+    "workbench.tree.indent": 14,
+
+    "editor.scrollbar.horizontal": "visible",
+    "editor.scrollbar.vertical": "visible",
+    "editor.minimap.enabled": false,
+
+    "workbench.activityBar.location": "hidden",
+
+    "chat.commandCenter.enabled": false,
+    "workbench.layoutControl.enabled": false,
+
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.cursorBlinking": "solid",
+ 
+    "editor.lightbulb.enabled": "off"
+}

@@ -1,0 +1,15 @@
+dnf_packages_to_uninstall:
+  - libreoffice*
+  - gnome-boxes
+  - firefox
+  - gnome-maps
+  - gnome-weather
+  - gnome-contacts
+  - gnome-tour
+  - gnome-characters
+  - gnome-connections
+  - decibels
+
+dnf_packages_to_install:
+  - gnome-tweaks
+  - git
