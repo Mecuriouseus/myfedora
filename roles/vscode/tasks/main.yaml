@@ -1,0 +1,37 @@
+# VSCode
+- name: Add VSCode repo
+  ansible.builtin.copy:
+    src: files/vscode.repo
+    dest: /etc/yum.repos.d/vscode.repo
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+
+- name: Install VSCode repo key
+  ansible.builtin.rpm_key:
+    key: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+  become: true
+
+- name: Install VSCode
+  ansible.builtin.dnf:
+    name: code
+    state: present
+  become: true
+
+- name: Create VSCode config folder
+  ansible.builtin.file:
+    path: /home/mishaid/.config/Code/User
+    state: directory
+    owner: mishaid
+    group: mishaid
+    mode: '700'
+
+- name: Configure VSCode
+  ansible.builtin.copy:
+    src: files/vscode_settings.json
+    dest: /home/mishaid/.config/Code/User/settings.json
+    owner: mishaid
+    group: mishaid
+    mode: '0644'

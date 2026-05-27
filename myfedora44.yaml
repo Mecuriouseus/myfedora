@@ -4,7 +4,7 @@
   connection: local
 
   roles:
-    - codium
+    - vscode
     - flatpak
     - gnome-extensions
     - dnf
@@ -16,7 +16,6 @@
       ansible.builtin.debug:
         msg: "{{ ansible_facts }}"
 
-# TODO: Заменить VSCodium на VSCode
 # TODO: hostname на основе board_name из ansible_facts
 # TODO: Настройка git
 # TODO: Настройка gnome-extensions

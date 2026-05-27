@@ -17,5 +17,9 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.cursorBlinking": "solid",
  
-    "editor.lightbulb.enabled": "off"
+    "editor.lightbulb.enabled": "off",
+    "redhat.telemetry.enabled": false,
+    "workbench.colorTheme": "Dark Modern",
+    "python.analysis.typeCheckingMode": "standard",
+    "telemetry.feedback.enabled": false
 }
