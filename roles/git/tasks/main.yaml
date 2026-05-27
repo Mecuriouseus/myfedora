@@ -1,0 +1,9 @@
+# Git
+- name: Copy git configs
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: /home/mishaid/
+    owner: mishaid
+    group: mishaid
+    mode: '700'
+  with_fileglob: "files/.*"
