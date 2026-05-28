@@ -63,3 +63,16 @@
   ansible.builtin.command:
     cmd: gnome-extensions install /tmp/gtk4-ding@smedius.gitlab.com.zip
     creates: /home/mishaid/.local/share/gnome-shell/extensions/gtk4-ding@smedius.gitlab.com/metadata.json
+
+- name: Copy Gnome extension config file
+  ansible.builtin.copy:
+    src: my_ext_bak.txt
+    dest: /tmp/my_ext_bak.txt
+    owner: mishaid
+    group: mishaid
+    mode: '0644'
+
+- name: Restore Gnome extension settings from file
+  ansible.builtin.shell:
+    cmd: dconf load /org/gnome/shell/extensions/ < /tmp/my_ext_bak.txt
+  changed_when: false

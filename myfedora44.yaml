@@ -12,12 +12,11 @@
     - ssh-client
     - git
 
-  tasks:
-    - name: Display facts
-      ansible.builtin.debug:
-        msg: "{{ ansible_facts }}"
+  # tasks:
+  #   - name: Display facts
+  #     ansible.builtin.debug:
+  #       msg: "{{ ansible_facts }}"
 
 # TODO: hostname на основе board_name из ansible_facts
-# TODO: Настройка gnome-extensions
 # TODO: Установка модулей VSCode???
 # TODO: Установка курсора и значков в Gnome
