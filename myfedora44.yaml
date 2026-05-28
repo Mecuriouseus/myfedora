@@ -6,7 +6,7 @@
   roles:
     - vscode
     - flatpak
-    - gnome-extensions
+    - gnome
     - dnf
     - syncthing
     - ssh-client

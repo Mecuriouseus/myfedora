@@ -76,3 +76,39 @@
   ansible.builtin.shell:
     cmd: dconf load /org/gnome/shell/extensions/ < /tmp/my_ext_bak.txt
   changed_when: false
+
+# Gnome icons and cursor
+
+- name: Creat ~/.icon
+  ansible.builtin.file:
+    path: /home/mishaid/.icons
+    state: directory
+    owner: mishaid
+    group: mishaid
+    mode: '770'
+
+- name: Exteract icons theme
+  ansible.builtin.unarchive:
+    src: Fluent.tar.xz
+    dest: /home/mishaid/.icons/
+    owner: mishaid
+    group: mishaid
+    mode: '770'
+
+- name: Exteract cursor theme
+  ansible.builtin.unarchive:
+    src: volantes_cursors.tar.xz
+    dest: /home/mishaid/.icons/
+    owner: mishaid
+    group: mishaid
+    mode: '770'
+
+- name: Set cursor theme
+  ansible.builtin.command:
+    cmd: gsettings set org.gnome.desktop.interface cursor-theme 'volantes_cursors'
+  changed_when: false
+
+- name: Set icon theme
+  ansible.builtin.command:
+    cmd: gsettings set org.gnome.desktop.interface icon-theme 'Fluent-dark'
+  changed_when: false
