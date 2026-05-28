@@ -12,11 +12,11 @@
     - ssh-client
     - git
 
-  # tasks:
-  #   - name: Display facts
-  #     ansible.builtin.debug:
-  #       msg: "{{ ansible_facts }}"
+  tasks:
+    - name: Set a hostname
+      ansible.builtin.hostname:
+        name: "mishaid-{{ ansible_facts['board_name'] }}"
+        use: systemd
 
-# TODO: hostname на основе board_name из ansible_facts
 # TODO: Установка модулей VSCode???
 # TODO: Установка курсора и значков в Gnome
