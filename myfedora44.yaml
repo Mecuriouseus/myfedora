@@ -18,4 +18,10 @@
         name: "mishaid-{{ ansible_facts['board_name'] }}"
         use: systemd
 
+    - name: Update whole system
+      ansible.builtin.dnf:
+        name: '*'
+        state: latest
+      become: true
+
 # TODO: Установка модулей VSCode???
