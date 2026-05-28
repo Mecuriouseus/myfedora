@@ -110,5 +110,5 @@
 
 - name: Set icon theme
   ansible.builtin.command:
-    cmd: gsettings set org.gnome.desktop.interface icon-theme 'Fluent-dark'
+    cmd: gsettings set org.gnome.desktop.interface icon-theme 'Fluent'
   changed_when: false
