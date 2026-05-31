@@ -15,3 +15,5 @@ dnf_packages_to_uninstall:
 dnf_packages_to_install:
   - gnome-tweaks
   - git
+  - keepassxc
+  - g4music
