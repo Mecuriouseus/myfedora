@@ -21,5 +21,7 @@
     "redhat.telemetry.enabled": false,
     "workbench.colorTheme": "Dark Modern",
     "python.analysis.typeCheckingMode": "standard",
-    "telemetry.feedback.enabled": false
+    "telemetry.feedback.enabled": false,
+
+    "terminal.integrated.stickyScroll.enabled": false
 }
